@@ -1,4 +1,4 @@
-import { Logo } from "@components";
+import { Logo, Navbar } from "@components";
 import { Search, ShoppingCart, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -13,43 +13,13 @@ export function Header() {
           </a>
         </p>
       </div>
+
       <div className="container">
         <div className="flex items-center justify-between gap-4 bg-white py-8">
           <Logo />
 
           <div className="flex items-center gap-10">
-            <nav>
-              <ul className="flex gap-6">
-                <li>
-                  <Link
-                    className="relative text-sm text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:ease-in-out hover:after:w-full"
-                    to="/shop">
-                    Shop
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="relative text-sm text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:ease-in-out hover:after:w-full"
-                    to="/sale">
-                    On Sale
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="relative text-sm text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:ease-in-out hover:after:w-full"
-                    to="/new">
-                    New Arrivals
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="relative text-sm text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:ease-in-out hover:after:w-full"
-                    to="/brands">
-                    Brands
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+            <Navbar />
 
             <form className="relative flex w-[35rem] items-center">
               <button type="submit" className="absolute left-4">
@@ -64,10 +34,13 @@ export function Header() {
           </div>
 
           <div className="flex gap-4">
-            <button>
+            <button aria-label="Open shopping cart">
               <ShoppingCart className="size-5" />
             </button>
-            <Link to="/account" className="text-sm text-black">
+            <Link
+              to="/account"
+              aria-label="Go to user account"
+              className="text-sm text-black">
               <User className="size-5" />
             </Link>
           </div>

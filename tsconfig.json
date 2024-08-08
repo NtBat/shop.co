@@ -9,11 +9,11 @@
     }
   ],
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
       "@*": ["./src/*"],
       "@lib": ["./src/lib"],
-      "@components/*": ["components/*"],
+      "@components": ["./src/components"],
       "@types": ["./src/types"],
       "@assets": ["./src/assets"],
       "@pages": ["./src/pages"],
