@@ -1,4 +1,5 @@
 import { Layout } from "./components";
+import { Home } from "@pages";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -8,7 +9,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <h1>World</h1>,
+        element: <Home />,
       },
     ],
   },
