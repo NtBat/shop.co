@@ -4,3 +4,4 @@ export * from "./Logo";
 export * from "./Navbar";
 export * from "./Title";
 export * from "./Button";
+export * from "./Badge";

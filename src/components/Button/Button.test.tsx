@@ -2,7 +2,7 @@ import { Button } from "@components";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-describe("Title Button component", () => {
+describe("Button component", () => {
   it("should render the button correctly", () => {
     render(<Button>Teste</Button>);
     const buttonElement = screen.getByText("Teste");
