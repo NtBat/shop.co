@@ -12,24 +12,13 @@ const title = tv({
       primary: "text-black",
       secondary: "text-white",
     },
-    size: {
-      sm: "text-sm",
-      md: "text-base",
-      lg: "px-4 py-3 text-lg",
-    },
   },
-  compoundVariants: [
-    {
-      size: ["sm", "md"],
-      class: "px-3 py-1",
-    },
-  ],
   defaultVariants: {
     size: "md",
     color: "primary",
   },
 });
 
-export function Title({ text, color, size, as: Component = "h2" }: TitleProps) {
-  return <Component className={title({ size, color })}>{text}</Component>;
+export function Title({ text, color, as: Component = "h2" }: TitleProps) {
+  return <Component className={title({ color })}>{text}</Component>;
 }
