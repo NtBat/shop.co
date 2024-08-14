@@ -26,6 +26,7 @@ export default defineConfig({
         "src/*.tsx",
         "src/types/",
         "vite.config.ts",
+        "plopfile.mjs",
       ],
     },
   },
