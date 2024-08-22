@@ -14,7 +14,7 @@ export function Header() {
         </p>
       </div>
 
-      <div className="container">
+      <div className="container-custom">
         <div className="flex items-center justify-between gap-4 bg-white py-8">
           <Logo />
 
