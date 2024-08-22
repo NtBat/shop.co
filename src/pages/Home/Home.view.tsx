@@ -1,3 +1,7 @@
+import styleCasual from "@assets/banner-style1.jpg";
+import styleFormal from "@assets/banner-style2.jpg";
+import styleParty from "@assets/banner-style3.jpg";
+import styleGym from "@assets/banner-style4.jpg";
 import calvinKleinBrand from "@assets/brand-calvin-klein.svg";
 import gucciBrand from "@assets/brand-gucci.svg";
 import pradaBrand from "@assets/brand-prada.svg";
@@ -97,6 +101,47 @@ export function Home() {
           <Link to="/all" className="mx-auto flex w-56">
             <Button color="outline">View All</Button>
           </Link>
+
+          <div className="mt-20 rounded-3xl bg-gray-100 px-16 py-16">
+            <div className="text-center">
+              <Title text="Browse By dress Style" />
+            </div>
+            <div className="mt-16 grid grid-cols-2 gap-5">
+              <Link to="/">
+                <img
+                  src={styleCasual}
+                  alt="Casual"
+                  className="h-auto w-full rounded-3xl"
+                  loading="lazy"
+                />
+              </Link>
+              <Link to="/">
+                <img
+                  src={styleFormal}
+                  alt="Formal"
+                  className="h-auto w-full rounded-3xl"
+                  loading="lazy"
+                />
+              </Link>
+
+              <Link to="/">
+                <img
+                  src={styleParty}
+                  alt="Party"
+                  className="h-auto w-full rounded-3xl"
+                  loading="lazy"
+                />
+              </Link>
+              <Link to="/">
+                <img
+                  src={styleGym}
+                  alt="Gym"
+                  className="h-auto w-full rounded-3xl"
+                  loading="lazy"
+                />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </>
