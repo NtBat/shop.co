@@ -53,8 +53,14 @@ describe("Button component", () => {
 
   it("should not render the icon when icon prop is not provided", () => {
     render(<Button>No Icon Button</Button>);
-    const iconElement = screen.queryByTestId("icon");
-    expect(iconElement).toBeNull();
+    const buttonElement = screen.getByText("No Icon Button");
+    expect(buttonElement.querySelector("svg")).toBeNull();
+  });
+
+  it("should render the icon when icon prop is provided", () => {
+    render(<Button icon={<svg data-testid="icon"></svg>}>With Icon</Button>);
+
+    expect(screen.getByTestId("icon")).toBeInTheDocument();
   });
 
   it("should have the correct aria-label when provided", () => {
