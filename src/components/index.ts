@@ -5,3 +5,5 @@ export * from "./Navbar";
 export * from "./Title";
 export * from "./Button";
 export * from "./Badge";
+export * from "./ProductItem";
+export * from "./StarsRating";
