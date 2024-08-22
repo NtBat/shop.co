@@ -8,5 +8,17 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        ".container-custom": {
+          width: "100%",
+          maxWidth: "1332",
+          paddingLeft: "16px",
+          paddingRight: "16px",
+          margin: "0 auto",
+        },
+      });
+    },
+  ],
 };
