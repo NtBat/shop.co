@@ -5,6 +5,8 @@ import versaceBrand from "@assets/brand-versace.svg";
 import zaraBrand from "@assets/brand-zara.svg";
 import fullBannerMobile from "@assets/full-banner-mobile.jpg";
 import fullBanner from "@assets/full-banner.jpg";
+import product1 from "@assets/product-item1.jpg";
+import { Button, ProductItem, Title } from "@components";
 import { Link } from "react-router-dom";
 
 export function Home() {
@@ -26,7 +28,7 @@ export function Home() {
       </Link>
 
       <div className="bg-black py-10">
-        <div className="container">
+        <div className="container-custom">
           <div className="flex items-center justify-between gap-4">
             <Link to="/versace">
               <img src={versaceBrand} alt="Versace logo" />
@@ -44,6 +46,57 @@ export function Home() {
               <img src={calvinKleinBrand} alt="Calvin Klein logo" />
             </Link>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-20">
+        <div className="container-custom space-y-12">
+          <div className="text-center">
+            <Title text="New Arrivals" />
+          </div>
+
+          <div className="grid grid-cols-4 gap-5">
+            <ProductItem
+              link="/t-shirt"
+              price={240}
+              priceBefore={290}
+              discountValue={20}
+              title="T-shirt with details"
+              imageUrl={product1}
+              rating={4.5}
+            />
+            <ProductItem
+              link="/t-shirt"
+              price={240}
+              priceBefore={290}
+              discountValue={20}
+              title="T-shirt with details"
+              imageUrl={product1}
+              rating={3.5}
+            />
+            <ProductItem
+              link="/t-shirt"
+              price={240}
+              priceBefore={290}
+              discountValue={20}
+              title="T-shirt with details"
+              imageUrl={product1}
+              rating={5}
+            />
+            <ProductItem
+              link="/t-shirt"
+              price={240}
+              priceBefore={290}
+              discountValue={20}
+              title="T-shirt with details"
+              imageUrl={product1}
+              rating={0}
+            />
+          </div>
+
+          <Link to="/all" className="mx-auto flex w-56">
+            <Button color="outline">View All</Button>
+          </Link>
         </div>
       </div>
     </>
