@@ -10,8 +10,23 @@ import zaraBrand from "@assets/brand-zara.svg";
 import fullBannerMobile from "@assets/full-banner-mobile.jpg";
 import fullBanner from "@assets/full-banner.jpg";
 import product1 from "@assets/product-item1.jpg";
-import { Button, ProductItem, Title } from "@components";
+import { Button, ProductItem, Reviews, Title } from "@components";
 import { Link } from "react-router-dom";
+
+const reviewItems = [
+  {
+    id: "1",
+    name: "John Doe",
+    text: "Amazing product! Highly recommend to everyone.",
+    rating: 5,
+  },
+  {
+    id: "2",
+    name: "Jane Smith",
+    text: "Good quality, but a bit expensive for what it offers.",
+    rating: 4,
+  },
+];
 
 export function Home() {
   return (
@@ -142,6 +157,12 @@ export function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-20">
+        <div className="container-custom">
+          <Reviews items={reviewItems} />
         </div>
       </div>
     </>

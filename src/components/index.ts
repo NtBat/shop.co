@@ -7,3 +7,4 @@ export * from "./Button";
 export * from "./Badge";
 export * from "./ProductItem";
 export * from "./StarsRating";
+export * from "./Reviews";
