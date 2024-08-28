@@ -10,7 +10,7 @@ import zaraBrand from "@assets/brand-zara.svg";
 import fullBannerMobile from "@assets/full-banner-mobile.jpg";
 import fullBanner from "@assets/full-banner.jpg";
 import product1 from "@assets/product-item1.jpg";
-import { Button, ProductItem, Reviews, Title } from "@components";
+import { Button, Footer, ProductItem, Reviews, Title } from "@components";
 import { Link } from "react-router-dom";
 
 const reviewItems = [
@@ -165,6 +165,8 @@ export function Home() {
           <Reviews items={reviewItems} />
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }

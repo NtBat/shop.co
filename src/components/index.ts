@@ -8,3 +8,5 @@ export * from "./Badge";
 export * from "./ProductItem";
 export * from "./StarsRating";
 export * from "./Reviews";
+export * from "./Footer";
+export * from "./Newsletter";
