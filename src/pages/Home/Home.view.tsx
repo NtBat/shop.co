@@ -28,6 +28,49 @@ const reviewItems = [
   },
 ];
 
+const productItems = [
+  {
+    id: "1",
+    title: "T-shirt with details",
+    price: 240,
+    priceBefore: 290,
+    discountValue: 20,
+    imageUrl: product1,
+    rating: 4.5,
+    link: "/t-shirt",
+  },
+  {
+    id: "2",
+    title: "T-shirt with details",
+    price: 240,
+    priceBefore: 290,
+    discountValue: 20,
+    imageUrl: product1,
+    rating: 4.5,
+    link: "/t-shirt",
+  },
+  {
+    id: "3",
+    title: "T-shirt with details",
+    price: 240,
+    priceBefore: 290,
+    discountValue: 20,
+    imageUrl: product1,
+    rating: 4.5,
+    link: "/t-shirt",
+  },
+  {
+    id: "4",
+    title: "T-shirt with details",
+    price: 240,
+    priceBefore: 290,
+    discountValue: 20,
+    imageUrl: product1,
+    rating: 4.5,
+    link: "/t-shirt",
+  },
+];
+
 export function Home() {
   return (
     <>
@@ -74,54 +117,32 @@ export function Home() {
             <Title text="New Arrivals" />
           </div>
 
-          <div className="grid grid-cols-4 gap-5">
-            <ProductItem
-              link="/t-shirt"
-              price={240}
-              priceBefore={290}
-              discountValue={20}
-              title="T-shirt with details"
-              imageUrl={product1}
-              rating={4.5}
-            />
-            <ProductItem
-              link="/t-shirt"
-              price={240}
-              priceBefore={290}
-              discountValue={20}
-              title="T-shirt with details"
-              imageUrl={product1}
-              rating={3.5}
-            />
-            <ProductItem
-              link="/t-shirt"
-              price={240}
-              priceBefore={290}
-              discountValue={20}
-              title="T-shirt with details"
-              imageUrl={product1}
-              rating={5}
-            />
-            <ProductItem
-              link="/t-shirt"
-              price={240}
-              priceBefore={290}
-              discountValue={20}
-              title="T-shirt with details"
-              imageUrl={product1}
-              rating={0}
-            />
+          <div className="flex grid-cols-4 gap-3 overflow-auto lg:grid lg:gap-5">
+            {productItems.map((item) => (
+              <div className="min-w-52">
+                <ProductItem
+                  link={item.link}
+                  key={item.id}
+                  title={item.title}
+                  price={item.price}
+                  priceBefore={item.priceBefore}
+                  discountValue={item.discountValue}
+                  imageUrl={item.imageUrl}
+                  rating={item.rating}
+                />
+              </div>
+            ))}
           </div>
 
           <Link to="/all" className="mx-auto flex w-56">
             <Button color="outline">View All</Button>
           </Link>
 
-          <div className="mt-20 rounded-3xl bg-gray-100 px-16 py-16">
+          <div className="mt-20 rounded-3xl bg-gray-100 p-4 lg:p-16">
             <div className="text-center">
               <Title text="Browse By dress Style" />
             </div>
-            <div className="mt-16 grid grid-cols-2 gap-5">
+            <div className="mt-5 grid gap-3 lg:mt-16 lg:grid-cols-2 lg:gap-5">
               <Link to="/">
                 <img
                   src={styleCasual}

@@ -3,10 +3,10 @@ import { type VariantProps, tv } from "tailwind-variants";
 type TitleProps = {
   text: string;
   as?: keyof JSX.IntrinsicElements;
-} & VariantProps<typeof title>; // Tipo das variantes
+} & VariantProps<typeof title>;
 
 const title = tv({
-  base: "text-4xl font-bold uppercase",
+  base: "text-xl lg:text-4xl font-bold uppercase",
   variants: {
     color: {
       primary: "text-black",
