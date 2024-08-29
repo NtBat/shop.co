@@ -1,5 +1,5 @@
 import { Logo, Navbar } from "@components";
-import { Search, ShoppingCart, User } from "lucide-react";
+import { Menu, Search, ShoppingCart, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Header() {
@@ -16,9 +16,14 @@ export function Header() {
 
       <div className="container-custom">
         <div className="flex items-center justify-between gap-4 bg-white py-8">
-          <Logo />
+          <div className="flex items-center gap-3">
+            <button className="flex lg:hidden">
+              <Menu />
+            </button>
+            <Logo />
+          </div>
 
-          <div className="flex items-center gap-10">
+          <div className="hidden items-center gap-10 lg:flex">
             <Navbar />
 
             <form className="relative flex w-[35rem] items-center">

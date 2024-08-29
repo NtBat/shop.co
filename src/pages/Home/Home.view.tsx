@@ -91,20 +91,30 @@ export function Home() {
 
       <div className="bg-black py-10">
         <div className="container-custom">
-          <div className="flex items-center justify-between gap-4">
-            <Link to="/versace">
+          <div className="flex items-center justify-between gap-4 overflow-auto">
+            <Link
+              to="/versace"
+              className="flex min-w-56 justify-center lg:min-w-0">
               <img src={versaceBrand} alt="Versace logo" />
             </Link>
-            <Link to="/zara">
+            <Link
+              to="/zara"
+              className="flex min-w-56 justify-center lg:min-w-0">
               <img src={zaraBrand} alt="Zara logo" />
             </Link>
-            <Link to="/gucci">
+            <Link
+              to="/gucci"
+              className="flex min-w-56 justify-center lg:min-w-0">
               <img src={gucciBrand} alt="Gucci logo" />
             </Link>
-            <Link to="/prada">
+            <Link
+              to="/prada"
+              className="flex min-w-56 justify-center lg:min-w-0">
               <img src={pradaBrand} alt="Prada logo" />
             </Link>
-            <Link to="/calvin-klein">
+            <Link
+              to="/calvin-klein"
+              className="flex min-w-56 justify-center lg:min-w-0">
               <img src={calvinKleinBrand} alt="Calvin Klein logo" />
             </Link>
           </div>
