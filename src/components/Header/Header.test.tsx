@@ -44,4 +44,23 @@ describe("Header component", () => {
 
     expect(searchInput.value).toBe("Test Product");
   });
+
+  it("should toggle menu when button is clicked", () => {
+    render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>,
+    );
+
+    const menuButton = screen.getByRole("button", { name: /menu/i });
+    const menu = screen.getByTestId("menu");
+
+    expect(menu).toHaveClass("-translate-x-full");
+
+    fireEvent.click(menuButton);
+    expect(menu).toHaveClass("-translate-x-0");
+
+    fireEvent.click(menuButton);
+    expect(menu).toHaveClass("-translate-x-full");
+  });
 });

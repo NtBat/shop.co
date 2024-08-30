@@ -24,13 +24,17 @@ export function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between gap-4 bg-white py-8">
           <div className="flex items-center gap-3">
-            <button className="flex lg:hidden" onClick={toggleClass}>
+            <button
+              className="flex lg:hidden"
+              onClick={toggleClass}
+              aria-label="Toggle menu">
               <Menu />
             </button>
             <Logo />
           </div>
 
           <div
+            data-testid="menu"
             className={`${!isMenuActive ? "-translate-x-full" : "-translate-x-0"} fixed left-0 top-0 flex h-full w-full flex-col items-start gap-5 bg-white px-4 py-5 transition duration-200 ease-in-out lg:relative lg:left-auto lg:top-auto lg:flex lg:h-auto lg:w-auto lg:-translate-x-0 lg:flex-row lg:items-center lg:gap-10 lg:px-0 lg:py-0`}>
             <button
               className="absolute right-4 top-5 lg:hidden"
