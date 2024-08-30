@@ -10,3 +10,4 @@ export * from "./StarsRating";
 export * from "./Reviews";
 export * from "./Footer";
 export * from "./Newsletter";
+export * from "./Breadcrumb";
