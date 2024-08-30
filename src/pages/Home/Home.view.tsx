@@ -121,7 +121,7 @@ export function Home() {
         </div>
       </div>
 
-      <div className="mt-20">
+      <div className="mt-10 lg:mt-20">
         <div className="container-custom space-y-12">
           <div className="text-center">
             <Title text="New Arrivals" />
@@ -190,7 +190,7 @@ export function Home() {
         </div>
       </div>
 
-      <div className="mt-20">
+      <div className="mt-10 lg:mt-20">
         <div className="container-custom">
           <Reviews items={reviewItems} />
         </div>
