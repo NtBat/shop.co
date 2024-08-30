@@ -129,10 +129,9 @@ export function Home() {
 
           <div className="flex grid-cols-4 gap-3 overflow-auto lg:grid lg:gap-5">
             {productItems.map((item) => (
-              <div className="min-w-52">
+              <div className="min-w-52" key={item.id}>
                 <ProductItem
                   link={item.link}
-                  key={item.id}
                   title={item.title}
                   price={item.price}
                   priceBefore={item.priceBefore}

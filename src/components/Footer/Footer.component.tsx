@@ -12,9 +12,7 @@ export function Footer() {
       <div className="container-custom">
         <div className="mt-8 flex flex-wrap justify-between gap-5">
           <div className="w-full space-y-5 lg:w-auto">
-            <Link to="/">
-              <Logo />
-            </Link>
+            <Logo />
             <p className="text-sm lg:max-w-64">
               We have clothes that suits your style and which you’re proud to
               wear. From women to men.

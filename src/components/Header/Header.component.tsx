@@ -1,8 +1,15 @@
 import { Logo, Navbar } from "@components";
-import { Menu, Search, ShoppingCart, User } from "lucide-react";
+import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Header() {
+  const [isMenuActive, setIsMenuActive] = useState(false);
+
+  const toggleClass = () => {
+    setIsMenuActive(!isMenuActive);
+  };
+
   return (
     <header>
       <div className="flex items-center justify-center bg-black py-2 text-sm text-white">
@@ -17,16 +24,23 @@ export function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between gap-4 bg-white py-8">
           <div className="flex items-center gap-3">
-            <button className="flex lg:hidden">
+            <button className="flex lg:hidden" onClick={toggleClass}>
               <Menu />
             </button>
             <Logo />
           </div>
 
-          <div className="hidden items-center gap-10 lg:flex">
+          <div
+            className={`${!isMenuActive ? "-translate-x-full" : "-translate-x-0"} fixed left-0 top-0 flex h-full w-full flex-col items-start gap-5 bg-white px-4 py-5 transition duration-200 ease-in-out lg:relative lg:left-auto lg:top-auto lg:flex lg:h-auto lg:w-auto lg:-translate-x-0 lg:flex-row lg:items-center lg:gap-10 lg:px-0 lg:py-0`}>
+            <button
+              className="absolute right-4 top-5 lg:hidden"
+              onClick={toggleClass}>
+              <X />
+            </button>
+
             <Navbar />
 
-            <form className="relative flex w-[35rem] items-center">
+            <form className="relative -order-1 mt-14 flex w-full items-center lg:order-last lg:mt-0 lg:w-[35rem]">
               <button type="submit" className="absolute left-4">
                 <Search className="size-5 text-gray-400" />
               </button>

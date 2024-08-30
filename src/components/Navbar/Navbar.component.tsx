@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export function Navbar() {
   return (
     <nav>
-      <ul className="flex gap-6">
+      <ul className="flex flex-col gap-6 lg:flex-row">
         <li>
           <Link
             className="relative text-sm text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:ease-in-out hover:after:w-full"
