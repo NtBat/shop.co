@@ -1,7 +1,7 @@
 import { Badge, StarsRating } from "@components";
 import { Link } from "react-router-dom";
 
-type ProductItemProps = {
+export type ProductItemProps = {
   link: string;
   title: string;
   priceBefore?: number;
