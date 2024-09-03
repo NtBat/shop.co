@@ -45,7 +45,7 @@ export function Category() {
             <Filter onFilterChange={handleFilterChange} />
           </div>
           <div className="flex-1 space-y-6">
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between">
               <h1 className="text-lg font-semibold lg:text-2xl">Casual</h1>
               <div>
                 <p className="text-sm text-gray-600">

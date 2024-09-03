@@ -16,6 +16,16 @@ type FilterProps = {
 export function Filter({ onFilterChange }: FilterProps) {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
+  const [isOpenSize, setIsOpenSize] = useState(true);
+  const [isOpenColor, setIsOpenColor] = useState(true);
+
+  const toggleSize = () => {
+    setIsOpenSize((prevIsOpenSize) => !prevIsOpenSize);
+  };
+
+  const toggleColor = () => {
+    setIsOpenColor((prevIsOpenColor) => !prevIsOpenColor);
+  };
 
   const handleColorChange = (color: string) => {
     setSelectedColors((prevSelectedColors) =>
@@ -55,11 +65,17 @@ export function Filter({ onFilterChange }: FilterProps) {
         <SlidersVertical size={18} className="text-gray-500" />
       </div>
       <div>
-        <button className="flex w-full items-center justify-between border-t border-solid border-gray-300 pt-6 text-lg font-semibold">
+        <button
+          className="flex w-full items-center justify-between border-t border-solid border-gray-300 pt-6 text-lg font-semibold"
+          onClick={toggleColor}>
           Colors
-          <ChevronDown size={18} />
+          <ChevronDown
+            size={18}
+            className={`transition-all ${isOpenColor ? "" : "rotate-180"} `}
+          />
         </button>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div
+          className={`mt-3 ${isOpenColor ? "flex" : "hidden"} flex-wrap gap-2`}>
           {colors.map((color) => (
             <div className="relative" key={color}>
               <div>
@@ -83,11 +99,17 @@ export function Filter({ onFilterChange }: FilterProps) {
         </div>
       </div>
       <div>
-        <button className="flex w-full items-center justify-between border-t border-solid border-gray-300 pt-6 text-lg font-semibold">
+        <button
+          className="flex w-full items-center justify-between border-t border-solid border-gray-300 pt-6 text-lg font-semibold"
+          onClick={toggleSize}>
           Size
-          <ChevronDown size={18} />
+          <ChevronDown
+            size={18}
+            className={`transition-all ${isOpenSize ? "" : "rotate-180"} `}
+          />
         </button>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div
+          className={`mt-3 ${isOpenSize ? "flex" : "hidden"} flex-wrap gap-2`}>
           {sizes.map((size) => (
             <div className="relative" key={size}>
               <input
