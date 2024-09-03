@@ -1,5 +1,5 @@
+import { axiosInstance } from "@lib";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 
 export interface Review {
   id: string;
@@ -12,7 +12,7 @@ export function useReviews() {
   return useQuery<Review[]>({
     queryKey: ["reviews"],
     queryFn: async () => {
-      const response = await axios.get("http://localhost:3000/reviews");
+      const response = await axiosInstance.get("/reviews");
       return response.data;
     },
     initialData: [],

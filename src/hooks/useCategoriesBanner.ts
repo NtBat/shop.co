@@ -1,5 +1,5 @@
+import { axiosInstance } from "@lib";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 
 export interface CategoryBanner {
   id: string;
@@ -11,9 +11,7 @@ export function useCategoriesBanner() {
   return useQuery<CategoryBanner[]>({
     queryKey: ["categoriesBanner"],
     queryFn: async () => {
-      const response = await axios.get(
-        "http://localhost:3000/categories-banner",
-      );
+      const response = await axiosInstance.get("/categories-banner");
       return response.data;
     },
     initialData: [],

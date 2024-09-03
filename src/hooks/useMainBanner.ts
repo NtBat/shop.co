@@ -1,5 +1,5 @@
+import { axiosInstance } from "@lib";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 
 export interface Banner {
   id: string;
@@ -12,7 +12,7 @@ export function useMainBanner() {
   return useQuery<Banner[]>({
     queryKey: ["mainBanner"],
     queryFn: async () => {
-      const response = await axios.get("http://localhost:3000/main-banner");
+      const response = await axiosInstance.get("/main-banner");
       return response.data;
     },
     initialData: [],
