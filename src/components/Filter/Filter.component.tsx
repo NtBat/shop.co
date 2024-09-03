@@ -53,7 +53,7 @@ export function Filter({ onFilterChange }: FilterProps) {
   const { data } = useProductFilters();
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <div data-testid="loading">Loading...</div>;
   }
 
   const { sizes, colors } = data;
@@ -67,15 +67,18 @@ export function Filter({ onFilterChange }: FilterProps) {
       <div>
         <button
           className="flex w-full items-center justify-between border-t border-solid border-gray-300 pt-6 text-lg font-semibold"
-          onClick={toggleColor}>
+          onClick={toggleColor}
+          data-testid="toggle-color">
           Colors
           <ChevronDown
             size={18}
             className={`transition-all ${isOpenColor ? "" : "rotate-180"} `}
+            data-testid="color-chevron"
           />
         </button>
         <div
-          className={`mt-3 ${isOpenColor ? "flex" : "hidden"} flex-wrap gap-2`}>
+          className={`mt-3 ${isOpenColor ? "flex" : "hidden"} flex-wrap gap-2`}
+          data-testid="color-section">
           {colors.map((color) => (
             <div className="relative" key={color}>
               <div>
@@ -91,6 +94,7 @@ export function Filter({ onFilterChange }: FilterProps) {
                 />
               </div>
               <label htmlFor={`color_${color}`}>
+                <span className="sr-only">{color}</span>
                 <div
                   className={`h-8 w-8 rounded-full ${getColorClass(color)}`}></div>
               </label>
@@ -101,15 +105,18 @@ export function Filter({ onFilterChange }: FilterProps) {
       <div>
         <button
           className="flex w-full items-center justify-between border-t border-solid border-gray-300 pt-6 text-lg font-semibold"
-          onClick={toggleSize}>
+          onClick={toggleSize}
+          data-testid="toggle-size">
           Size
           <ChevronDown
             size={18}
             className={`transition-all ${isOpenSize ? "" : "rotate-180"} `}
+            data-testid="size-chevron"
           />
         </button>
         <div
-          className={`mt-3 ${isOpenSize ? "flex" : "hidden"} flex-wrap gap-2`}>
+          className={`mt-3 ${isOpenSize ? "flex" : "hidden"} flex-wrap gap-2`}
+          data-testid="size-section">
           {sizes.map((size) => (
             <div className="relative" key={size}>
               <input

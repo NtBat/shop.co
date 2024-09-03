@@ -55,19 +55,23 @@ export function Category() {
               </div>
             </div>
             <div className="grid grid-cols-3 gap-x-5 gap-y-10">
-              {filteredProducts.map((item) => (
-                <div className="min-w-52" key={item.id}>
-                  <ProductItem
-                    link={item.link}
-                    title={item.title}
-                    price={item.price}
-                    priceBefore={item.priceBefore}
-                    discountValue={item.discountValue}
-                    imageUrl={item.imageUrl}
-                    rating={item.rating}
-                  />
-                </div>
-              ))}
+              {filteredProducts.length > 0 ? (
+                filteredProducts.map((item) => (
+                  <div className="min-w-52" key={item.id}>
+                    <ProductItem
+                      link={item.link}
+                      title={item.title}
+                      price={item.price}
+                      priceBefore={item.priceBefore}
+                      discountValue={item.discountValue}
+                      imageUrl={item.imageUrl}
+                      rating={item.rating}
+                    />
+                  </div>
+                ))
+              ) : (
+                <h1>No results found</h1>
+              )}
             </div>
           </div>
         </div>
