@@ -10,7 +10,7 @@ type ProductFilters = {
 export function useProductFilters() {
   return useQuery({
     queryKey: ["productFilters"],
-    queryFn: async (): Promise<ProductFilters> => {
+    queryFn: async (): Promise<ProductFilters | null> => {
       const response = await axiosInstance.get<Product[]>("/products");
       const products = response.data;
 

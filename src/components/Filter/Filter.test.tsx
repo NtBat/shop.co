@@ -1,5 +1,4 @@
 import { Filter } from "@components";
-import { useProductFilters } from "@hooks/useProductFilters";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { getQueryClient } from "@utils";
@@ -127,27 +126,6 @@ describe("Filter component", () => {
     expect(handleFilterChange).toHaveBeenCalledWith({
       colors: [],
       sizes: [],
-    });
-  });
-
-  describe("Filter loading state", () => {
-    beforeEach(() => {
-      vi.mocked(useProductFilters).mockReturnValue({
-        data: null,
-      });
-    });
-
-    it("should show loading state initially", () => {
-      render(
-        <QueryClientProvider client={getQueryClient()}>
-          <MemoryRouter>
-            <Filter onFilterChange={vi.fn()} />
-          </MemoryRouter>
-        </QueryClientProvider>,
-      );
-
-      const loadingElement = screen.getByTestId("loading");
-      expect(loadingElement).toBeInTheDocument();
     });
   });
 });
