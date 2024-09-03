@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-interface MarqueeProps {
+type MarqueeProps = {
   className?: string;
   reverse?: boolean;
   pauseOnHover?: boolean;
@@ -8,7 +8,7 @@ interface MarqueeProps {
   vertical?: boolean;
   repeat?: number;
   [key: string]: any;
-}
+};
 
 export default function Marquee({
   className,

@@ -1,12 +1,12 @@
 import { axiosInstance } from "@lib";
 import { useQuery } from "@tanstack/react-query";
 
-export interface Banner {
+type Banner = {
   id: string;
   imageUrl: string;
   imageUrlMobile: string;
   title: string;
-}
+};
 
 export function useMainBanner() {
   return useQuery<Banner[]>({

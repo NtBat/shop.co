@@ -1,11 +1,11 @@
 import { axiosInstance } from "@lib";
 import { useQuery } from "@tanstack/react-query";
 
-export interface CategoryBanner {
+type CategoryBanner = {
   id: string;
   title: string;
   imageUrl: string;
-}
+};
 
 export function useCategoriesBanner() {
   return useQuery<CategoryBanner[]>({

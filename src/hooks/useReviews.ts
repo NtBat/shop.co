@@ -1,12 +1,12 @@
 import { axiosInstance } from "@lib";
 import { useQuery } from "@tanstack/react-query";
 
-export interface Review {
+type Review = {
   id: string;
   name: string;
   text: string;
   rating: number;
-}
+};
 
 export function useReviews() {
   return useQuery<Review[]>({

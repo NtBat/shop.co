@@ -1,12 +1,12 @@
 import { axiosInstance } from "@lib";
 import { useQuery } from "@tanstack/react-query";
 
-export interface Brand {
+type Brand = {
   id: string;
   title: string;
   imageUrl: string;
   link: string;
-}
+};
 
 export function useBrands() {
   return useQuery<Brand[]>({

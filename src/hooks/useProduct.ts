@@ -1,16 +1,6 @@
 import { axiosInstance } from "@lib";
 import { useQuery } from "@tanstack/react-query";
-
-export interface Product {
-  id: string;
-  title: string;
-  price: number;
-  priceBefore: number;
-  discountValue: number;
-  imageUrl: string;
-  rating: number;
-  link: string;
-}
+import { Product } from "@types";
 
 export function useProducts() {
   return useQuery<Product[]>({
