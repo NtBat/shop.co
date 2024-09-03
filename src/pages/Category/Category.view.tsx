@@ -1,63 +1,61 @@
-import product2 from "@assets/product2.jpg";
-import product3 from "@assets/product3.jpg";
-import product1 from "@assets/product-item1.jpg";
-import { Breadcrumb, ProductItem } from "@components";
+import { Breadcrumb, Filter, ProductItem } from "@components";
+import { useProducts } from "@hooks";
+import { Product } from "@types";
+import { useState } from "react";
+
+type FilterCriteria = {
+  colors: string[];
+  sizes: string[];
+};
 
 const breadcrumbItems = [
   { name: "All", path: "/all" },
   { name: "Category", path: "/category", isCurrently: true },
 ];
 
-const productItems = [
-  {
-    id: "1",
-    title: "T-shirt with details",
-    price: 240,
-    priceBefore: 290,
-    discountValue: 20,
-    imageUrl: product1,
-    rating: 4.5,
-    link: "/t-shirt",
-  },
-  {
-    id: "2",
-    title: "Gradient Graphic T-shirt",
-    price: 145,
-    imageUrl: product2,
-    rating: 3,
-    link: "/t-shirt",
-  },
-  {
-    id: "3",
-    title: "Black Striped T-shirt",
-    price: 120,
-    priceBefore: 160,
-    discountValue: 30,
-    imageUrl: product3,
-    rating: 5,
-    link: "/t-shirt",
-  },
-];
-
 export function Category() {
+  const productsQuery = useProducts();
+  const [filters, setFilters] = useState<FilterCriteria>({
+    colors: [],
+    sizes: [],
+  });
+
+  const handleFilterChange = (newFilters: FilterCriteria) => {
+    setFilters(newFilters);
+  };
+
+  const filteredProducts =
+    productsQuery.data?.filter((product: Product) => {
+      const matchesColor =
+        filters.colors.length === 0 ||
+        filters.colors.some((color) => product.color.includes(color));
+      const matchesSize =
+        filters.sizes.length === 0 ||
+        filters.sizes.some((size) => product.size.includes(size));
+      return matchesColor && matchesSize;
+    }) || [];
+
   return (
     <div className="container-custom">
       <div className="space-y-6 border-t border-solid border-gray-200 pt-6">
         <Breadcrumb breadcrumbItems={breadcrumbItems} />
 
         <div className="flex gap-5">
-          <div className="w-80"></div>
+          <div className="w-72">
+            <Filter onFilterChange={handleFilterChange} />
+          </div>
           <div className="flex-1 space-y-6">
             <div className="flex justify-between">
               <h1 className="text-lg font-semibold lg:text-2xl">Casual</h1>
               <div>
                 <p className="text-sm text-gray-600">
-                  Showing 1-10 of 100 Products
+                  Showing {filteredProducts.length} of{" "}
+                  {productsQuery.data.length} Products
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-3 gap-x-5 gap-y-10">
-              {productItems.map((item) => (
+              {filteredProducts.map((item) => (
                 <div className="min-w-52" key={item.id}>
                   <ProductItem
                     link={item.link}

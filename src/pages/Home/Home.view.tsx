@@ -28,14 +28,14 @@ export function Home() {
       <Link to="/">
         <picture>
           <source
-            srcSet={mainBannerQuery.data[0].imageUrlMobile}
+            srcSet={mainBannerQuery.data[0]?.imageUrlMobile}
             media="(max-width: 767px)"
             data-testid="picture-source"
           />
           <img
-            src={mainBannerQuery.data[0].imageUrl}
+            src={mainBannerQuery.data[0]?.imageUrl}
             className="h-auto w-full"
-            alt={mainBannerQuery.data[0].title}
+            alt={mainBannerQuery.data[0]?.title}
           />
         </picture>
       </Link>
