@@ -1,10 +1,20 @@
 import { Logo, Navbar } from "@components";
 import { Menu, Search, ShoppingCart, User, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Header() {
+  const navigate = useNavigate();
+
   const [isMenuActive, setIsMenuActive] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+    }
+  };
 
   const toggleClass = () => {
     setIsMenuActive(!isMenuActive);
@@ -44,12 +54,16 @@ export function Header() {
 
             <Navbar />
 
-            <form className="relative -order-1 mt-14 flex w-full items-center lg:order-last lg:mt-0 lg:w-[35rem]">
+            <form
+              onSubmit={handleSearchSubmit}
+              className="relative -order-1 mt-14 flex w-full items-center lg:order-last lg:mt-0 lg:w-[35rem]">
               <button type="submit" className="absolute left-4">
                 <Search className="size-5 text-gray-400" />
               </button>
               <input
-                type="search"
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for products..."
                 className="h-12 w-full rounded-3xl bg-gray-100 px-14 text-sm text-gray-400 transition-all placeholder:text-gray-400 focus:shadow-md focus:outline-none"
               />
