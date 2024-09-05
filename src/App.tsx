@@ -1,5 +1,5 @@
 import { Layout } from "./components";
-import { Category, Home, Search } from "@pages";
+import { Category, Home, Product, Search } from "@pages";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -18,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <Search />,
+      },
+      {
+        path: "/product/:slug",
+        element: <Product />,
       },
     ],
   },
