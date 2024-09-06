@@ -26,7 +26,22 @@ export function Product() {
             <span>Select Colors</span>
           </div>
           <div className="mt-4 border-t border-solid border-gray-200 pt-4">
-            <span>Choose Size</span>
+            <span className="text-sm">Choose Size</span>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              <div className="relative">
+                <input
+                  type="checkbox"
+                  className="peer/size absolute left-0 top-0 h-full w-full cursor-pointer opacity-0"
+                  id={`size_1`}
+                />
+                <label
+                  htmlFor={`size_1`}
+                  className="flex items-center justify-center rounded-full bg-gray-200 px-3 py-2 text-sm text-gray-700 transition-all duration-200 ease-in-out peer-checked/size:bg-black peer-checked/size:text-white">
+                  Small
+                </label>
+              </div>
+            </div>
           </div>
           <div className="mt-4 flex gap-3 border-t border-solid border-gray-200 pt-4">
             <div className="flex h-12 w-40 items-center justify-between rounded-full bg-gray-100 px-2">
