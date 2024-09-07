@@ -1,5 +1,5 @@
 import { Breadcrumb, Button } from "@components";
-import { Minus, Plus } from "lucide-react";
+import { CheckIcon, Minus, Plus } from "lucide-react";
 
 const breadcrumbItems = [
   { name: "Casual", path: "/t-shirt", isCurrently: true },
@@ -23,7 +23,26 @@ export function Product() {
             a soft and breathable fabric, it offers superior comfort and style.
           </p>
           <div className="mt-4 border-t border-solid border-gray-200 pt-4">
-            <span>Select Colors</span>
+            <span className="text-sm">Select Colors</span>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <div className="relative">
+                <div>
+                  <input
+                    type="checkbox"
+                    className="peer/color absolute left-0 top-0 h-full w-full cursor-pointer opacity-0"
+                    id={`color_1`}
+                  />
+                  <CheckIcon
+                    size={16}
+                    className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 text-white peer-checked/color:block"
+                  />
+                </div>
+                <label htmlFor={`color_1`}>
+                  <span className="sr-only">Black</span>
+                  <div className={`h-8 w-8 rounded-full bg-black`}></div>
+                </label>
+              </div>
+            </div>
           </div>
           <div className="mt-4 border-t border-solid border-gray-200 pt-4">
             <span className="text-sm">Choose Size</span>
