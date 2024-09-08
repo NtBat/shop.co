@@ -15,7 +15,9 @@ export function Product() {
       <div className="grid grid-cols-2 gap-10">
         <div></div>
         <div>
-          <h1>One Life Graphic T-shirt</h1>
+          <h1 className="text-lg font-bold uppercase">
+            One Life Graphic T-shirt
+          </h1>
           <div></div>
           <div></div>
           <p className="text-sm">

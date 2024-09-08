@@ -1,4 +1,4 @@
-import { Button, Footer, ProductItem, Reviews, Title } from "@components";
+import { Button, ProductItem, Reviews, Title } from "@components";
 import {
   useBrands,
   useCategoriesBanner,
@@ -110,8 +110,6 @@ export function Home() {
           <Reviews items={reviewsQuery.data} />
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }
