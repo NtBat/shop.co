@@ -20,7 +20,7 @@ export function Product() {
           </h1>
           <div></div>
           <div></div>
-          <p className="text-sm">
+          <p className="mt-2 block text-sm">
             This graphic t-shirt which is perfect for any occasion. Crafted from
             a soft and breathable fabric, it offers superior comfort and style.
           </p>
